@@ -34,36 +34,7 @@
     display: block;
 
     margin-top: 20px;
-
     margin-left: calc( 100vw/52 - 10px );
-
-    width: 20px;
-    height: 20px;
-
-    border: none;
-    border-radius: 100%;
-
-    outline: none;
-
-    transition: all .1s ease 0s;
-
-    cursor: pointer;
-}
-
-.main-page .side button:hover {
-    opacity: 0.8;
-}
-
-.main-page .side button.start {
-    background-color: rgb( 42, 201, 68 );
-}
-
-.main-page .side button.end {
-    background-color: rgb( 252, 192, 37 );
-}
-
-.main-page .side button.reset {
-    background-color: rgb( 255, 87, 91 );
 }
 
 .main-page .main {
@@ -85,14 +56,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
     
     width: 100%;
     height: 100%;
 
+    position: relative;
+
     font: bold 30px "Times New Roman";
 }
 
-.main-page .header .mode-container {
+.main-page .reaction-equation span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate( -50%, -50% );
+}
+
+.main-page .header .reaction-equation::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+
+    background-color: transparent;
+}
+
+.main-page .header .reaction-equation::-webkit-scrollbar-track {
+    width: 10px;
+    height: 100%;
+
+    background-color: transparent;
+}
+
+.main-page .header .reaction-equation::-webkit-scrollbar-thumb {
+    width: 10px;
+
+    background-color: #fff;
+
+    border-radius: 5px;
+}
+
+.main-page .header .config-button-container {
     display: flex;
     justify-content: center;
     align-content: space-between;
@@ -110,11 +116,11 @@
     cursor: pointer;
 }
 
-.main-page .mode-container:hover {
+.main-page .config-button-container:hover {
     opacity: .8;
 }
 
-.main-page .header .mode-container .rect {
+.main-page .header .config-button-container .rect {
     display: block;
 
     width: 100%;
@@ -127,6 +133,7 @@
     grid-area: 2 / 1 / 3 / 2;
     width: 100%;
     height: 100%;
+    max-height: 540px;
 
     overflow-x: hidden;
     overflow-y: scroll;
@@ -137,8 +144,6 @@
     height: 100%;
 
     background-color: transparent;
-    
-    border-radius: 5px;
 }
 
 .main-page .input::-webkit-scrollbar-track {
@@ -153,69 +158,8 @@
     width: 100%;
 
     background-color: #fff;
-}
 
-.main-page .input-item {
-    width: 100%;
-    height: 60px;
-
-    position: relative;
-}
-
-.main-page .input-item::after {
-    content: '';
-    
-    height: 1px;
-
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 0;
-
-    background-image: linear-gradient(
-        90deg, 
-        transparent 0%, 
-        rgba( 255, 255, 255, .5) 10%, 
-        rgba( 255, 255, 255, .5) 90%, 
-        transparent 100% );
-}
-
-.main-page .input-item .label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 50px;
-    height: 100%;
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    font: 18px "Times New Roman";
-
-    text-align: center;
-}
-
-.main-page .input-item input {
-
-    width: 60%;
-    height: 100%;
-
-    position: absolute;
-    right: 15%;
-    top: 50%;
-
-    background-color: transparent;
-
-    border: none;
-
-    color: #fff;
-    font: normal 18px "Times New Roman";
-
-    outline: none;
-
-    transform: translateY( -50% );
+    border-radius: 5px;
 }
 
 .main-page .output {
@@ -224,11 +168,38 @@
 
     grid-area: 2 / 2 / 3 / 3;
 
-    /* padding-right: 10px; */
+    padding-right: 5vw;
+    box-sizing: border-box;
+
+    overflow-y: scroll;
 
     width: 100%;
     height: 100%;
+    max-height: 540px;
     
+}
+
+.main-page .output::-webkit-scrollbar {
+    width: 5px;
+    height: 100%;
+
+    background-color: transparent;
+}
+
+.main-page .output::-webkit-scrollbar-track {
+    width: 50px;
+    width: 100%;
+
+    background-color: transparent;
+}
+
+.main-page .output::-webkit-scrollbar-thumb {
+    width: 5px;
+    width: 100%;
+
+    background-color: #fff;
+
+    border-radius: 5px;
 }
 
 .main-page .output .data {
@@ -259,26 +230,18 @@
 .main-page .chart-item {
     margin-top: 10px;
 
-    width: 90%;
+    width: 100%;
     height: 60px;
 
+    background-color: transparent;
+
     box-shadow: 0 0 0 1px rgb( 100, 100, 255, .8 ) inset;
+
+    /* transition: all .1s ease 0s; */
 }
 
-.main-page #chart-A {
-    width: 10%;
-}
-
-.main-page #chart-B {
-    width: 30%;
-}
-
-.main-page #chart-C {
-    width: 80%;
-}
-
-.main-page #chart-D {
-    width: 40%;
+.main-page .chart-item:hover {
+    background-color: rgb( 100, 100, 255, .8 );
 }
 
 .main-page .chart .net {
@@ -286,11 +249,11 @@
     justify-content: space-between;
     align-items: center;
     
-    width: 90%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
 
     position: absolute;
-    right: 10%;
+    right: 0;
     top: 0;
 }
 

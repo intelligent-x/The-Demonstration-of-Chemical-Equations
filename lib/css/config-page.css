@@ -1,0 +1,114 @@
+.config-page {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+
+    justify-items: center;
+
+    overflow-y: hidden;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    background-color: rgb( 39, 40, 34 );
+}
+
+.config-page-close {
+    display: none;
+}
+
+.config-page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+
+    color: rgb( 255, 255, 255, .5 );
+    font: normal 40px "Times New Roman";
+}
+
+.config-page div.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80px;
+    height: 20px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.config-page-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+    
+    width: 60%;
+    /* 学习点！！！不用 px 单位会被伸缩 */
+    height: 500px;
+}
+
+.config-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+
+    grid-area: 1 / 1 / 2 / 3;
+
+    width: 100%;
+}
+
+.material-config::-webkit-scrollbar,
+.product-config::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+}
+
+.material-config::-webkit-scrollbar-thumb,
+.product-config::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb( 255, 255, 255, .5 );
+    border-radius: 5px;
+}
+
+.material-config::-webkit-scrollbar-track,
+.product-config::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: transparent;
+}
+
+.material-config, .product-config {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    
+    margin-top: 20px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: 100%;
+    height: 100%;
+}
+
+.material-config {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.product-config {
+    grid-area: 2 / 2 / 3 / 3;
+}

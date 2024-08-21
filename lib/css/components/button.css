@@ -1,0 +1,31 @@
+button.mac {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: all .1s ease 0s;
+
+    cursor: pointer;
+}
+
+button.mac:hover {
+    opacity: 0.8;
+}
+
+button.mac-green {
+    background-color: var( --mac-green );
+}
+
+button.mac-yellow {
+    background-color: var( --mac-yellow );
+}
+
+button.mac-red {
+    background-color: var( --mac-red );
+}

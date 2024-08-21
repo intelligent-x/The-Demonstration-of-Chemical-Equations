@@ -4,135 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>化学反应物理量变化演示 - Changes in Chemical Reactions</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+
+    <link rel="stylesheet" href="./lib/css/config.css">
+    
     <link rel="stylesheet" href="./lib/css/layout.css">
     <link rel="stylesheet" href="./lib/css/main-page.css">
-    <link rel="stylesheet" href="./lib/css/mode-page.css">
-    <script src="./lib/js/classes.js"></script>
+    <link rel="stylesheet" href="./lib/css/config-page.css">
+
+    <link rel="stylesheet" href="./lib/css/components/input-item.css">
+    <link rel="stylesheet" href="./lib/css/components/button.css">
+    
+    <script src="./lib/js/classes/Calculator.js"></script>
+    <script src="./lib/js/classes/Configer.js"></script>
+    <script src="./lib/js/classes/Controler.js"></script>
+    <script src="./lib/js/classes/Renderer.js"></script>
+    <script src="./lib/js/classes/Transporter.js"></script>
 </head>
 <body>
     <div class="root">
-        <div class="mode-page">
-            <div class="mode-page-header">配置化学反应</div>
-            <div class="mode-page-body"></div>
-            <button class="close" title="关闭"></button>
+        <div class="config-page config-page-close">
+            <div class="config-page-header">配置化学反应</div>
+            <div class="config-page-body">
+                <div class="config-numbers">
+                    <div class="input-item">
+                        <div class="label">
+                            <span>
+                                反应物个数
+                            </span>
+                        </div>
+                        <input type="text" id="materialNumber">
+                    </div>
+                    <div class="input-item">
+                        <div class="label">
+                            <span>
+                                生成物个数
+                            </span>
+                        </div>
+                        <input type="text" id="productNumber">
+                    </div>
+                </div>
+                <div class="material-config"></div>
+                <div class="product-config"></div>
+            </div>
+            <div class="buttons">
+                <button class="mac mac-green config-save" title="保存"></button>
+                <button class="mac mac-yellow config-reset" title="重置"></button>
+                <button class="mac mac-red config-close" title="关闭"></button>
+            </div>
         </div>
         <div class="main-page">
             <div class="body">
                 <div class="side">
-                    <button class="start" title="开始"></button>
-                    <button class="end" title="结束"></button>
-                    <button class="reset" title="重置"></button>
+                    <button class="mac mac-green main-start" title="开始"></button>
+                    <button class="mac mac-yellow main-end" title="结束"></button>
+                    <button class="mac mac-red main-reset" title="重置"></button>
                 </div>
                 <div class="main">
                     <div class="header">
-                    <div class="reaction-equation">
-                        A(g) + B(g) <=> C(g) + D(g)
-                    </div>
-                    <div class="mode-container">
-                        <div class="rect"></div>
-                        <div class="rect"></div>
-                        <div class="rect"></div>
-                    </div>
-                </div>
-                <div class="input">
-                    <div class="input-item">
-                        <div class="label">
-                            <span>K</span>
-                        </div>
-                        <input type="text" id="K" disabled>
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
+                        <div class="reaction-equation">
                             <span>
-                                k<sub>正</sub>
+                                化学方程式暂未配置
                             </span>
                         </div>
-                        <input type="text" id="kf">
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
-                            <span>
-                                k<sub>逆</sub>
-                            </span>
-                        </div>
-                        <input type="text" id="kr">
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
-                            <span>
-                                c<sub>A0</sub>
-                            </span>
-                        </div>
-                        <input type="text" id="cA0">
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
-                            <span>
-                                c<sub>B0</sub>
-                            </span>
-                        </div>
-                        <input type="text" id="cB0">
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
-                            <span>
-                                c<sub>C0</sub>
-                            </span>
-                        </div>
-                        <input type="text" id="cC0">
-                    </div>
-                    <div class="input-item">
-                        <div class="label">
-                            <span>
-                                c<sub>D0</sub>
-                            </span>
-                        </div>
-                        <input type="text" id="cD0">
-                    </div>
-                </div>
-                <div class="output">
-                    <div class="data">
-                        <div class="data-item" id="cA">
-                            <span>c<sub>A</sub></span>
-                        </div>
-                        <div class="data-item" id="cB">
-                            <span>c<sub>B</sub></span>
-                        </div>
-                        <div class="data-item" id="cC">
-                            <span>c<sub>C</sub></span>
-                        </div>
-                        <div class="data-item" id="cD">
-                            <span>c<sub>D</sub></span>
+                        <div class="config-button-container">
+                            <div class="rect"></div>
+                            <div class="rect"></div>
+                            <div class="rect"></div>
                         </div>
                     </div>
-                    <div class="chart">
-                        <div class="net">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
+                    <div class="input">
+                        <div class="input-item">
+                            <div class="label">
+                                <span>K</span>
+                            </div>
+                            <input type="text" id="K" disabled>
                         </div>
-                        <div class="chart-item" id="chart-cA0">
-                            <!-- <div id="vA"></div> -->
+                        <div class="input-item">
+                            <div class="label">
+                                <span>
+                                    k<sub>正</sub>
+                                </span>
+                            </div>
+                            <input type="text" id="kf">
                         </div>
-                        <div class="chart-item" id="chart-cB0">
-                            <!-- <div id="vB"></div> -->
+                        <div class="input-item">
+                            <div class="label">
+                                <span>
+                                    k<sub>逆</sub>
+                                </span>
+                            </div>
+                            <input type="text" id="kr">
                         </div>
-                        <div class="chart-item" id="chart-cC0">
-                            <!-- <div id="vC"></div> -->
-                        </div>
-                        <div class="chart-item" id="chart-cD0">
-                            <!-- <div id="vD"></div> -->
+                    </div>
+                    <div class="output">
+                        <div class="data"></div>
+                        <div class="chart">
+                            <div class="net">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
             <div class="footer">
-                参考文献 Kenneth Antonio Connors, Chemical Kinetics: The Study of Reaction Rates in Solution, P11-30
+                本站作者 intelligent; 参考文献 Kenneth Antonio Connors, Chemical Kinetics: The Study of Reaction Rates in Solution, P11-30
             </div>
         </div>
     </div>
