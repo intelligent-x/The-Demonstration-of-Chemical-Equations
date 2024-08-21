@@ -1,24 +1,26 @@
 # The Demonstration of Chemical Equations - 化学反应演示
 
-Augest 14th 2024
-2024 年 08 月 14 日
+Augest 21th 2024
 
 Author: Luxi Zheng
 作者：郑禄曦
 
 #### I.Guidelines
 ##### i.Instructions
-1. Input the datas you want in the correct areas.
-2. Click the button you want to operate the app.
-##### ii.Buttons
-1. The green button on the left side is used for starting the app.
-2. The yellow button on the left side is used for stopping the app.
-3. The red button on the left side is used for stopping the app and clearing all the existing datas. 
+1. Click the CONFIG BUTTON at the right top position.
+2. Enter the config page and input your wanted amount of materials and products.
+3. Input the argument according to the substance.
+4. Click the GREEN BUTTON to save your config and click the RED BUTTON to exit the config page. ( The YELLOW BUTTON is for clearing the config )
+5. Input the initial concentration of each substance.
+6. Click the chart area and input the max display range of the chart.
+7. Click the GREEN BUTTON on the left side to start the reaction. ( The YELLOW BUTTON is for stopping the reaction and the RED BUTTON for clearing all datas in main page. )
+
 #### 一、使用指南
 ##### （一）操作
-1. 在相应的区域输入你想要的数据；
-2. 点击你想要的按钮去操控应用。
-##### （二）按钮
-1. 左侧绿色按钮用于开启程序；
-2. 左侧黄色按钮用于停止程序；
-3. 左侧红色按钮用于停止程序并删除已存在的数据。
+1. 点击右上角的配置按钮
+2. 进入配置界面, 输入你想配置的反应中反应物的个数、生成物的个数
+3. 在对应反应物、生成物的位置输入其相对应的化学计量数
+4. 点击右上角绿色按钮保存设置，再点击红色按钮退出配置界面( 黄色按钮会清除所有配置输入，谨慎使用 )。
+5. 在主界面对应输入框输入各物质的初始浓度。
+6. 点击图标区域，输入图标能够显示的最大数值。
+7. 点击主界面左侧的绿色按钮开始反应，黄色按钮停止反应，红色按钮清除主界面所有设置。
